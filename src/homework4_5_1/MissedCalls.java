@@ -12,9 +12,16 @@ public class MissedCalls {
         missedCalls.put(localDateTime, number);
     }
 
+    public Map<LocalDateTime, String> returnListOfMissedCalls() {
+        return missedCalls;
+    }
 
-    /*
-    Возвращение списка пропущенных вызовов.
-    Очистка списка пропущенных вызовов.
-     */
+    public void deleteAllMissedCalls() {
+        missedCalls.clear();
+    }
+
+    @Override
+    public String toString() {
+        return missedCalls.toString();
+    }
 }

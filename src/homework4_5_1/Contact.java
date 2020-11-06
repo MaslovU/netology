@@ -31,8 +31,8 @@ public class Contact {
         Phone = phone;
     }
 
-    public Enum<homework4_5_1.Group> getGroup() {
-        return Group;
+    public Group getGroup() {
+        return (homework4_5_1.Group) Group;
     }
 
     public void setGroup(Enum<homework4_5_1.Group> group) {
@@ -42,8 +42,8 @@ public class Contact {
     @Override
     public String toString() {
         return "Contact name is: " + getName() +
-                " surname " + getSurname() +
-                " phone is " + getPhone() +
-                " group is " + getGroup();
+                ", surname " + getSurname() +
+                ", phone is " + getPhone() +
+                ", group is " + getGroup();
     }
 }

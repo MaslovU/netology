@@ -39,4 +39,20 @@ public class Contacts implements Cloneable {
     public String toString() {
         return "List of contacts is: " + Arrays.toString(contacts.entrySet().toArray());
     }
+
+    public Group selectGroup(String groupValue) {
+        Group group = null;
+        switch (groupValue) {
+            case "work":
+                group = Group.WORK;
+                break;
+            case "friends":
+                group = Group.FRIENDS;
+                break;
+            case "family":
+                group = Group.FAMILY;
+                break;
+        }
+        return group;
+    }
 }
