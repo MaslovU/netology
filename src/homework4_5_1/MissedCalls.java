@@ -8,8 +8,12 @@ public class MissedCalls {
 
     Map<LocalDateTime, String> missedCalls = new TreeMap<>();
 
+    public void addMissedCalls(LocalDateTime localDateTime, String number) {
+        missedCalls.put(localDateTime, number);
+    }
+
+
     /*
-    Добавление пропущенного вызова.
     Возвращение списка пропущенных вызовов.
     Очистка списка пропущенных вызовов.
      */

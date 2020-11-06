@@ -1,7 +1,11 @@
 package homework4_5_1;
 
+import java.time.LocalDateTime;
+import java.util.Scanner;
+
 public class Main {
     public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
         Contacts contacts = new Contacts();
         MissedCalls missedCalls = new MissedCalls();
 
@@ -13,6 +17,33 @@ public class Main {
         Contact searchableContact = contacts.searchContactByPhoneNumber("+7874");
         System.out.println(contacts);
         System.out.println(searchableContact);
+
+        while (true) {
+            System.out.println("выберите желаемое действие:\n" +
+                    "    1 - Добавление контакта (имя, фамилия, номер телефона, группа контакта: работа, друзья, семья).\n" +
+                    "    2 - Добавление пропущенного вызова.\n" +
+                    "    3 - Вывод всех пропущенных вызовов\n" +
+                    "    4 - Очистка пропущенных вызовов.\n" +
+                    "    5 - Завершить работу программы (выход)");
+            String value = scanner.nextLine();
+            if (value.equals("1")) {
+                contacts.addContact("Yury", "Maslov", "+7896", Group.FAMILY);
+            }
+            if (value.equals("2")) {
+                LocalDateTime localDateTime = LocalDateTime.now();
+                missedCalls.addMissedCalls(localDateTime, "+7865");
+            }
+            if (value.equals("3")) {
+
+            }
+            if (value.equals("4")) {
+
+            }
+            if (value.equals("5")) {
+                break;
+            }
+        }
+
     }
 
     /*
