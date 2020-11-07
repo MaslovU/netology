@@ -1,7 +1,9 @@
 package homework4_5_1;
 
 import java.time.LocalDateTime;
+import java.util.Map;
 import java.util.Scanner;
+import java.util.Set;
 
 public class Main {
     public static void main(String[] args) {
@@ -9,11 +11,6 @@ public class Main {
         Contacts contacts = new Contacts();
         MissedCalls missedCalls = new MissedCalls();
         Group group;
-
-//        contacts.deleteContactByNameSurname("Ivan", "Petrov");
-//        Contact searchableContact = contacts.searchContactByPhoneNumber("+7874");
-//        System.out.println(contacts);
-//        System.out.println(searchableContact);
 
         while (true) {
             System.out.println("выберите желаемое действие:\n" +
@@ -50,8 +47,12 @@ public class Main {
                 missedCalls.addMissedCalls(localDateTime, missedNumber);
             }
             if (value.equals("3")) {
-                System.out.println(missedCalls.returnListOfMissedCalls());
-                System.out.println(" 2");
+                System.out.println("List of missed calls");
+                Set<Map<LocalDateTime, Contact>> listMissedContacts = missedCalls.returnListOfMissedCalls(contacts);
+                for (Map<LocalDateTime, Contact> elem : listMissedContacts) {
+                    System.out.println(elem);
+                }
+                System.out.println(" ");
             }
             if (value.equals("4")) {
                 missedCalls.deleteAllMissedCalls();

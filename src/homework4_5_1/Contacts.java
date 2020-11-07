@@ -5,7 +5,7 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
 
-public class Contacts implements Cloneable {
+public class Contacts {
 
     Map<String, Contact> contacts = new HashMap<>();
 
