@@ -1,9 +1,8 @@
 package homework4_5_1;
 
 import java.time.LocalDateTime;
-import java.util.Map;
+import java.util.List;
 import java.util.Scanner;
-import java.util.Set;
 
 public class Main {
     public static void main(String[] args) {
@@ -48,8 +47,8 @@ public class Main {
             }
             if (value.equals("3")) {
                 System.out.println("List of missed calls");
-                Set<Map<LocalDateTime, Contact>> listMissedContacts = missedCalls.returnListOfMissedCalls(contacts);
-                for (Map<LocalDateTime, Contact> elem : listMissedContacts) {
+                List<Contact> listMissedContacts = missedCalls.returnListOfMissedCalls(contacts);
+                for (Contact elem : listMissedContacts) {
                     System.out.println(elem);
                 }
                 System.out.println(" ");
