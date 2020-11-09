@@ -6,15 +6,20 @@ import java.util.*;
 public class MissedCalls {
 
     Map<LocalDateTime, String> missedCalls = new TreeMap<>();
-    List<Contact> missedContacts = new ArrayList<>();
+    List<String> missedContacts = new ArrayList<>();
 
     public void addMissedCalls(LocalDateTime localDateTime, String number) {
         missedCalls.put(localDateTime, number);
     }
 
-    public List<Contact> returnListOfMissedCalls(Contacts contacts) {
+    public List<String> returnListOfMissedCalls(Contacts contacts) {
         missedCalls.forEach((key, value) -> {
-            missedContacts.add(contacts.searchContactByPhoneNumber(value));
+            if (contacts.searchContactByPhoneNumber(value) != null) {
+                missedContacts.add(key + " " + contacts.searchContactByPhoneNumber(value));
+            } else {
+                missedContacts.add(key + " " + value);
+            }
+
         });
         return missedContacts;
     }

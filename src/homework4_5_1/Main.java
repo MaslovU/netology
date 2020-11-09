@@ -47,8 +47,8 @@ public class Main {
             }
             if (value.equals("3")) {
                 System.out.println("List of missed calls");
-                List<Contact> listMissedContacts = missedCalls.returnListOfMissedCalls(contacts);
-                for (Contact elem : listMissedContacts) {
+                List<String> listMissedContacts = missedCalls.returnListOfMissedCalls(contacts);
+                for (String elem : listMissedContacts) {
                     System.out.println(elem);
                 }
                 System.out.println(" ");
